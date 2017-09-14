@@ -1,0 +1,55 @@
+<!Doctype html>
+
+	<head>
+		<title>Color Illuminator</title>
+		<script type="text/javascript">
+			function updateSlider()
+			{
+				var red = document.getElementById("red").value;
+				var green = document.getElementById("green").value;
+				var blue = document.getElementById("blue").value;
+
+				document.getElementById("circle").style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
+				document.getElementById("values").innerHTML = "RGB(" + red + "," + green + "," + blue + ")";
+			}
+		</script>
+
+		<style>
+			#circle	{
+				width:100px;
+				height:100px;
+				border-radius:5%;
+				background-color:rgb(30,144,255);
+				margin:50px;
+			}
+			input  {
+				width:15%;
+				margin:20px;
+			}
+			p{
+				display: inline-block;
+				width: 18%
+			}
+		</style>
+	</head>
+
+	<body>
+	<center>
+		<div id="circle"></div>
+		<div>
+			<input type="range" min="0" max="255" title="Red" id="red" value="30" onchange="updateSlider()">
+			<input type="range" min="0" max="255" title="Green" id="green" value="144" onchange="updateSlider()">
+			<input type="range" min="0" max="255" title="Blue" id="blue" value="255" onchange="updateSlider()">
+		</div>
+		<div>
+			<p>Red</p>
+			<p>Green</p>
+			<p>Blue</p>
+		</div>
+		<p id="values">
+			RGB(30,144,255)
+		</p>
+	</center>
+	</body>
+
+</html>
